@@ -21,7 +21,7 @@ const styles = {
 function MediaCard(props) {
   const { classes } = props;
   return (
-    <Card className={classes.card}>
+    <Card className={classes.card} variant="contained">
       <CardActionArea>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
