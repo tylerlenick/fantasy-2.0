@@ -12,6 +12,10 @@ const Home = (props) =>{
 			handleLogout={props.handleLogout}
 			/>
 			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
 			<Grid container spacing={24}>
 				<Grid item xs={12} sm={3}>
 				<TeamBar />

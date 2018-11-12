@@ -1,12 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import SwipeableViews from 'react-swipeable-views';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
+import ArticleCard from "../ArticleCard";
 import Typography from '@material-ui/core/Typography';
-import ArticleCard from '../ArticleCard';
+
 
 function TabContainer({ children, dir }) {
   return (
@@ -42,44 +39,23 @@ class FullWidthTabs extends React.Component {
   };
 
   render() {
-    const { classes, theme } = this.props;
+    const { classes } = this.props;
 
     return (
       <div className={classes.root}>
-        <AppBar position="static" color="default">
-          <Tabs
-            value={this.state.value}
-            onChange={this.handleChange}
-            indicatorColor="primary"
-            textColor="primary"
-            fullWidth
-          >
-            <Tab label="Item One" />
-            <Tab label="Item Two" />
-            <Tab label="Item Three" />
-          </Tabs>
-        </AppBar>
-        <SwipeableViews
-          axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-          index={this.state.value}
-          onChangeIndex={this.handleChangeIndex}
-        >
-          <TabContainer dir={theme.direction} alignContent="center">
-          <ArticleCard />
-            <br />
-          <ArticleCard />
-          </TabContainer>
-          <TabContainer dir={theme.direction}>
-          <ArticleCard />
-            <br />
-          <ArticleCard />
-          </TabContainer>
-          <TabContainer dir={theme.direction}>
-          <ArticleCard />
-            <br />
-          <ArticleCard />
-          </TabContainer>
-        </SwipeableViews>
+        <main className={classes.content}>
+        <div className={classes.toolbar} />
+        <ArticleCard />
+        <br/>
+        <ArticleCard />
+        <br/>        
+        <ArticleCard />
+        <br/>
+        <ArticleCard />
+        <br/>
+        <ArticleCard />
+        <br/>
+      </main>
       </div>
     );
   }

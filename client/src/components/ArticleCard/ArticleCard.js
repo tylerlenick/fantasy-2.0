@@ -11,10 +11,11 @@ import Typography from '@material-ui/core/Typography';
 
 const styles = {
   card: {
-    maxWidth: 345,
+    maxWidth: 950,
+    minWidth: 950
   },
   media: {
-    height: 140,
+    height: 200,
   },
 };
 
@@ -28,6 +29,12 @@ function MediaCard(props) {
             Lizard
           </Typography>
           <Typography component="p">
+            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+            across all continents except AntarcticaLizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+            across all continents except Antarctica
+            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+            across all continents except AntarcticaLizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+            across all continents except Antarctica
             Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
             across all continents except AntarcticaLizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
             across all continents except Antarctica
