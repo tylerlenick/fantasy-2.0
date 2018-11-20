@@ -19,6 +19,8 @@ import MailIcon from '@material-ui/icons/Mail';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import Button from '@material-ui/core/Button';
+import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
+import Paper from '@material-ui/core/Paper';
 
 
 
@@ -57,7 +59,7 @@ const styles = theme => ({
 });
  
 
-function PaperSheet(props) {
+function TeamBar(props) {
   const { classes } = props;
 
   return (
@@ -88,23 +90,13 @@ function PaperSheet(props) {
               <Button variant="contained" color="primary" className={classes.button}>
                 Primary
               </Button>
-        </div>
-        <div className={classes.toolbar} />
+      </div>
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+          {['Alvin Kamara', 'Deandre Hopkins', 'Tom Brady', 'Dan Bailey'].map((text, index) => (
+            <Paper button key={text}>
+              <Button><DeleteOutlinedIcon /></Button>
               <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
+            </Paper>
           ))}
         </List>
     </Drawer>
@@ -112,8 +104,8 @@ function PaperSheet(props) {
   );
 }
 
-PaperSheet.propTypes = {
+TeamBar.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(PaperSheet);
+export default withStyles(styles)(TeamBar);

@@ -98,9 +98,9 @@ function SignIn(props) {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
-          <button
+          <Button
             //type="submit"
-            fullWidth
+            
             variant="contained"
             color="primary"
             //className={classes.submit}
@@ -108,8 +108,11 @@ function SignIn(props) {
             name="/auth/signin"
           >
             Sign in
-          </button>
-          <Link to = "/signup" ><Button>Sign Up</Button></Link>
+          </Button>
+
+          <Link to = "/signup" ><Button 
+      
+          >Sign Up</Button></Link>
 
         </form>
       </Paper>
