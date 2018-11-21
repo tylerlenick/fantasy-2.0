@@ -2,27 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import List from '@material-ui/core/List';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import Hidden from '@material-ui/core/Hidden';
 import Divider from '@material-ui/core/Divider';
-import MenuIcon from '@material-ui/icons/Menu';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
-import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import Button from '@material-ui/core/Button';
 import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
 import Paper from '@material-ui/core/Paper';
-
-
 
 const drawerWidth = 240;
   
@@ -56,6 +42,12 @@ const styles = theme => ({
     flexGrow: 1,
     padding: theme.spacing.unit * 3,
   },
+  playerCard: {
+    float: 'right'
+  },
+  trashCan: {
+   
+  }
 });
  
 
@@ -91,10 +83,10 @@ function TeamBar(props) {
                 Primary
               </Button>
       </div>
-        <List>
+        <List className={classes.playerCard}>
           {['Alvin Kamara', 'Deandre Hopkins', 'Tom Brady', 'Dan Bailey'].map((text, index) => (
             <Paper button key={text}>
-              <Button><DeleteOutlinedIcon /></Button>
+              <Button className={classes.trashCan}><DeleteOutlinedIcon /></Button>
               <ListItemText primary={text} />
             </Paper>
           ))}

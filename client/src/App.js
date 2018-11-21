@@ -5,6 +5,7 @@ import axios from 'axios';
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import Home from "./components/Home";
+import API from './utils/API';
 
 class App extends Component {
   state = {
@@ -14,7 +15,13 @@ class App extends Component {
       userId:"",
       username:"",
       isAuthenticated:false
-    }
+    },
+    articles: [],
+    playerArticles: [],
+    players: [],
+    currentPlayer: "",
+    searchPlayer: "",
+    currentUser: "",
   };
 
   componentWillMount(){
@@ -77,6 +84,29 @@ class App extends Component {
       });
     })
   };
+
+  getPlayerArticles = player => {
+    API.getFantasyPros(player)
+        .then(articles => {
+            this.setState({
+                articles: articles.data
+            })
+        })
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+
+    API.savePlayer({
+        name: this.state.searchPlayer,
+    }).then(res => API.getPlayers())
+        .then(players => {
+            this.setState({
+                players: players.data
+            })
+        }).catch(err => console.log(err));
+  };
+
 
   render() {
     const loggedIn = this.state.auth.isAuthenticated;
